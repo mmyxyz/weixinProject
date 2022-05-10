@@ -1,0 +1,3 @@
+<!--pages/hot/hot.wxml-->
+
+<view wx:for="{{dataList}}"  wx:key="index"  class="text"></view>

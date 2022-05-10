@@ -1,0 +1,75 @@
+<view class="container">
+  <!-- 2.授权  -->
+  <!-- <view>授权登录</view>
+  <view class='content'>
+  <button wx:if='{{isShow}}' open-type="getUserInfo"  bindgetuserinfo='getUserInfo'>点击授权</button>
+  <view class='userinfo' wx:else>
+    <view class='img'> <image src='{{avatarUrl}}'></image></view>
+    <view class= 'name'>{{nickName}}</view>
+  </view> 
+   </view> -->
+  <!-- 2.授权登录  -->
+  <view class="my">
+  <view class="userinfo">
+    <view wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 登录 </button>
+    </view>
+    <view wx:else class="top">
+      <image bindtap="bindViewTap"   class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <view class="userinfo-nickname" >{{userInfo.nickName}}</view>
+    </view>
+  </view>
+</view>
+<button wx:if="{{userInfo!=null}}" bindtap="loginOut">退出登录 </button>
+
+<view class="center">
+<view class="center-item">
+<image class="icon1" src="/images/pinglun.png"></image>
+<view>评论</view>
+</view>
+<view class="center-item">
+<image class="icon1" src="/images/guanzhu.png"></image>
+<view>关注的人</view>
+</view>
+<view class="center-item">
+<image class="icon1" src="/images/huozan.png"></image>
+<view>获赞</view>
+</view>
+<view class="center-item">
+<image class="icon1" src="/images/fensi.png"></image>
+<view>粉丝</view>
+</view>
+
+</view>
+<button type="primary" bindtap="updateData">更新一条数据</button >
+<input placeholder="请输入id" bindinput="myIpt"></input>
+<button type="primary" bindtap="delData">删除一条数据</button>
+
+<button type="primary" bindtap="vtnNum">查询个数</button>
+
+
+<view wx:for="{{dataObj}}"  wx:key="index"  class="text">
+	<image class="picture1" src="{{item.picturePath}}"/>
+<view class="information">
+<view>{{currentIndex}}</view>
+ <view class="title" url="/pages/info/info">{{item.title}}</view> 
+  <view class="user">
+  <image class="head1" src="{{item.imagesPath}}"/>
+  <view class="username">{{item.username}}</view>
+  </view>
+</view>
+<view class="position">
+<image class="site1" src="/images/dingwei.png"/>
+<view class="site2">{{item.site}}</view>
+<view hidden="{{!item.isHighRecommended}}" style="color: red; font-size: 13px;margin-left: 40px;">热</view>
+</view>
+<view class="zan">
+<button catchtap="f0">
+  <image class="dianzan" src="/images/dianzan.png"></image>
+</button>
+  <view class="num">{{item.zan}}</view>
+  </view>
+</view>
+
+</view>
+

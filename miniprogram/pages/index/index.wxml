@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="search">
+    	<input class="placeholder" placeholder="    搜索景点"/>
+	  <view class="iconfont icon-wxbsousuotuiguang" bindtap="searchData"></view>
+    <view wx:for="{{dataObj}}"  wx:key="title">{{item.title}}-{{item.username}}</view>
+	</view>
+		<!-- 搜索 -->
+
+    <swiper  class="banner" indicator-dots indicator-color="rgba(255,255,255,0.5)" 
+    indicator-active-color="#fff" autoplay interval="3000">
+    <swiper-item>
+    <image src="/images/minda1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="/images/minda2.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+    <image src="/images/minda3.jpg"></image>
+    </swiper-item>
+     </swiper>
+		<!-- 内容 -->
+<view  class="all" >
+<view wx:for="{{dataList}}"  wx:key="index"  class="text" 
+bindtap="clickRow"  data-id='{{item._id}}' data-idx='{{index}}'>
+	<image class="picture1" src="{{item.fileID}}"/>
+<view>{{currentIndex}}</view>
+ <view class="title" url="/pages/info/info">{{item.title}}</view> 
+  <view class="user">
+  <image class="head1" src="{{item.imagesPath}}"/>
+  <view class="username">{{item.username}}</view>
+
+</view>
+
+
+
+</view>
+</view>
+
+</view>

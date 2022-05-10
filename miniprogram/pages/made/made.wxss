@@ -1,0 +1,6 @@
+/* pages/made/made.wxss */
+ input {border: 1px solid #888;}
+ btnimg{
+     width: 100px;
+     height: 100px;
+ }

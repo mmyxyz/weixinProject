@@ -1,0 +1,14 @@
+<!--pages/made/made.wxml-->
+
+<!-- <button type="primary" bindtap="addData">插入一条数据</button> -->
+<form bindsubmit="btnSub">
+<input name="title" placeholder="请输入标题"></input>
+<textarea name="content" placeholder="请输入内容"></textarea>
+<button type="plain" bindtap="clickBtn" class="btnimg"  placeholder="请选择图片"  >照片/视频</button>
+<image wx:for="{{arr}}" wx:key="index" name="fileID" src="{{item}}" ></image>
+
+<view name="createTime">{{createTime}}</view>
+ <view   name="avatarUrl" >{{avatarUrl}}</view>
+ <view name="nickName"  >{{nickName}}</view>
+<button type="primary" form-type="submit" bindtap="showToast">提交</button>
+</form>
